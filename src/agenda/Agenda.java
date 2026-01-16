@@ -51,7 +51,31 @@ public class Agenda {
 		return false;
 	}
 	
+	// -- Usando Comparator y Collection --
 	
+	public void listarOrdenadoPorEmail() {
+		
+		// creamos una nueva arraylist con Contactos y le metemos la listaContactos
+		ArrayList<Contacto> listaOrdenada = new ArrayList<>(listaContactos);
+		
+		// usamos el metodo sort (ordenar) de Collection, creando un comparador para contactos
+		Collections.sort(listaOrdenada, new Comparator<Contacto>() {
+			// sobreescribimos el constructor compare que trae Collections
+	        @Override
+	        // ajustado para que reciba contacto 1 y contacto 2
+	        public int compare(Contacto c1, Contacto c2) {
+	            // Comparamos los emails
+	            return c1.getEmail().compareToIgnoreCase(c2.getEmail());
+	        }
+	    });
+		
+		for (Contacto c : listaOrdenada) {
+			// crear un método de mostrar datos :v
+			System.out.println("Email: " + c.getEmail() + " | ID: " + c.getId());
+			
+		}
+		
+	}
 
 	// --- Intento de hashmap ---
 	
@@ -71,7 +95,7 @@ public class Agenda {
 				
 				// Si en el hashmap ya existe la palabra almacenada en sector (el sector de la empresa)
 				if (conteo.containsKey(sector)) {
-					
+					// va a sector, obtiene el numero que hay dentro de sector, le suma uno y vuelve a poner sector, con el nuevo numero.
 					conteo.put(sector, conteo.get(sector) + 1);
 				} else {
 					// si no, mete en conteo, el sector y un 1 para empezar el conteo
@@ -79,8 +103,13 @@ public class Agenda {
 				}
 			}
 		}
+	
+		// Este es el bucle para los hashmap
+	    System.out.println("--- Empresas por Sector ---");
+	    for (String sector : conteo.keySet()) {
+	        System.out.println("Sector: " + sector + " - Cantidad: " + conteo.get(sector));
+	    }
 		
 	}
-	
 	
 }
