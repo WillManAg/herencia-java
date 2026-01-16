@@ -1,6 +1,9 @@
 package agenda;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 
 public class Agenda {
 	
@@ -37,7 +40,7 @@ public class Agenda {
 		
 		// recorremos toda la lista de contactos y almacenamos cada contacto en c
 		for (Contacto c : listaContactos) {
-			
+			// si coincid el id del contacto, modifica su telefono y devuelve true
 			if (c.getId().equals(idBuscar)) {
 				c.setTelefono(nuevoTelefono);
 				return true;
@@ -45,8 +48,39 @@ public class Agenda {
 			
 		}
 		
-		
 		return false;
 	}
+	
+	
 
+	// --- Intento de hashmap ---
+	
+	public void empresasSector() {
+		
+		// Creamos un hashmap que contendrá un string que es el nombre del sector y el numero de veces que aparece
+		HashMap<String, Integer> conteo = new HashMap<>();
+		
+		// recorremos toda la lista de contactos mirando contacto por contacto
+		for (Contacto c : listaContactos) {
+			
+			// revisamos si el contacto es empresa
+			if (c instanceof Empresa) {
+				
+				// transformamos contacto de vuelta a empresa, obtenemos su sector y lo almacenamos
+				String sector = ((Empresa) c).getSector();
+				
+				// Si en el hashmap ya existe la palabra almacenada en sector (el sector de la empresa)
+				if (conteo.containsKey(sector)) {
+					
+					conteo.put(sector, conteo.get(sector) + 1);
+				} else {
+					// si no, mete en conteo, el sector y un 1 para empezar el conteo
+					conteo.put(sector, 1);
+				}
+			}
+		}
+		
+	}
+	
+	
 }
