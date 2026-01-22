@@ -10,6 +10,12 @@ public class Empresa extends Contacto{
 		this.direccionPostal = direccionPostal;
 		this.sector = sector;
 	}
+	
+	@Override
+	public void mostrarDatos() {
+	    super.mostrarDatos(); 
+	    System.out.println(" | Dirección: " + direccionPostal + " | Sector: " + sector);
+	}
 
 	public String getDireccionPostal() {
 		return direccionPostal;

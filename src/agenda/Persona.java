@@ -10,6 +10,12 @@ public class Persona extends Contacto {
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
+	
+	@Override
+	public void mostrarDatos() {
+	    super.mostrarDatos(); 
+	    System.out.println(" | Nombre: " + nombre + " " + apellido);
+	}
 
 	public String getNombre() {
 		return nombre;

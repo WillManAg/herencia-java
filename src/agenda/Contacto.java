@@ -1,6 +1,6 @@
 package agenda;
 
-public class Contacto {
+public abstract class Contacto {
 	
 	protected String id;
 	protected int telefono;
@@ -14,6 +14,10 @@ public class Contacto {
 		
 	}
 
+	public void mostrarDatos() {
+	    System.out.print("ID: " + id + " | Tel: " + telefono + " | Email: " + email);
+	}
+	
 	public String getId() {
 		return id;
 	}

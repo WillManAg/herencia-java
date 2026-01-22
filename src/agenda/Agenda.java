@@ -112,4 +112,15 @@ public class Agenda {
 		
 	}
 	
+	public void listarContactos() {
+	    if (listaContactos.isEmpty()) {
+	        System.out.println("La agenda está vacía.");
+	    } else {
+	        System.out.println("--- LISTA COMPLETA DE CONTACTOS ---");
+	        for (Contacto c : listaContactos) {
+	            c.mostrarDatos(); 
+	        }
+	    }
+	}
+	
 }
