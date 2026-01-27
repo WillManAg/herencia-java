@@ -13,7 +13,8 @@ public class Fila implements EstructuraDeDatos {
     @Override
     public boolean introducir(int numero) {
         if (!estaLlena()) {
-            datos[contador++] = numero;
+            datos[contador] = numero;
+            contador++;
             return true;
         }
         return false;
