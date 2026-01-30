@@ -13,12 +13,12 @@ public class Tablero {
         misArqueros.mostrarPersonajes();
 
 
-        misArqueros.ComparadorRango();
+        misArqueros.comparadorRango();
 
         System.out.println("Desp Rango:");
         misArqueros.mostrarPersonajes();
         
-        misArqueros.ComparadorSalud();;
+        misArqueros.comparadorSalud();;
         
         System.out.println("Desp Salud:");
         misArqueros.mostrarPersonajes();

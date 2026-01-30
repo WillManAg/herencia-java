@@ -11,12 +11,13 @@ public class Main {
         do {
             System.out.println("\n--- AGENDA DE CONTACTOS ---");
             System.out.println("1. Alta de contacto");
-            System.out.println("2. Baja de contacto (por id)");
-            System.out.println("3. Modificar teléfono (por id)");
+            System.out.println("2. Baja de contacto");
+            System.out.println("3. Modificar teléfono");
             System.out.println("4. Listar todos los contactos");
-            System.out.println("5. Empresas por sector (HashMap)");
-            System.out.println("6. Ordenar por email (Comparator)");
-            System.out.println("7. Salir");
+            System.out.println("5. Empresas por sector");
+            System.out.println("6. Ordenar por email");
+            System.out.println("7. Ordenar por teléfono");
+            System.out.println("8. Salir");
             System.out.print("Elige una opción: ");
             
             opcion = Integer.parseInt(teclado.nextLine());
@@ -57,12 +58,14 @@ public class Main {
                     miAgenda.listarOrdenadoPorEmail();
                     break;
                 case 7:
+                	miAgenda.listarOrdenadoPorTelefono();
+                case 8:
                     System.out.println("¡Adiós!");
                     break;
                 default:
                     System.out.println("Opción no válida.");
             }
-        } while (opcion != 7);
+        } while (opcion != 8);
     }
 
     public static void altaContacto(Scanner teclado, Agenda agenda) {

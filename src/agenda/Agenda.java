@@ -123,4 +123,20 @@ public class Agenda {
 	    }
 	}
 	
+	public void comparadorTelefono() {
+    	Collections.sort(this.listaContactos, new ComparadorTelefono());
+    }
+	
+	public void listarOrdenadoPorTelefono() {
+		ArrayList<Contacto> listaOrdenada = new ArrayList<>(listaContactos);
+		
+		Collections.sort(listaOrdenada, new ComparadorTelefono());
+		
+		System.out.println("--- Contactos ordenados por Teléfono ---");
+		for (Contacto c : listaOrdenada) {
+			// crear un método de mostrar datos :v
+			System.out.println("Teléfono: " + c.getTelefono() + " | ID: " + c.getId());
+			
+		}
+	}
 }

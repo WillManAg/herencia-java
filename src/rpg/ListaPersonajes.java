@@ -20,11 +20,11 @@ public class ListaPersonajes {
         }
     }
     
-    public void ComparadorRango() {
+    public void comparadorRango() {
     	Collections.sort(this.personajes, new ComparadorRango());
     }
     
-    public void ComparadorSalud() {
+    public void comparadorSalud() {
     	Collections.sort(this.personajes, new ComparadorSalud());
     }
     
